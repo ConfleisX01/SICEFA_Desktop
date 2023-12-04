@@ -1,0 +1,52 @@
+.button-exit {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 5 10;
+    -fx-border-color: white;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-background-color: transparent;
+}
+
+.body {
+    -fx-background-color: transparent;
+}
+
+.button-start {
+    -fx-text-fill: black;
+    -fx-font-size: 14px;
+    -fx-padding: 10 20;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-background-color: white;
+    -fx-transition: background-color 0.2s;
+}
+
+.button-start:hover {
+    -fx-text-fill: white;
+    -fx-background-color: black;
+}
+
+.h1 {
+    -fx-font-size: 32px;
+    -fx-font-family: "System";
+    -fx-text-fill: #333333;
+}
+
+.h2 {
+    -fx-font-size: 24px;
+    -fx-font-family: "System";
+    -fx-text-fill: #333333;
+}
+
+.h3 {
+    -fx-font-size: 18px;
+    -fx-font-family: "System";
+    -fx-text-fill: #333333;
+}
+
+.p {
+    -fx-font-size: 14px;
+    -fx-font-family: "System";
+    -fx-text-fill: #333333;
+}
