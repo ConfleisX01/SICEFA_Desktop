@@ -1,8 +1,9 @@
 package org.utl.dsm.dreamsoft_sicefa.Model;
 
 public class Sucursal {
+
     private int idSucursal;
-    private String nombre;
+    private String nombreSucursal;
     private String titular;
     private String rfc;
     private String domicilio;
@@ -18,13 +19,39 @@ public class Sucursal {
     private Usuario usuario;
     private Persona persona;
 
-    public Sucursal(){
-
+    public Empleado getEmpleado() {
+        return empleado;
     }
 
-    public Sucursal(int idSucursal, String nombre, String titular, String rfc, String domicilio, String colonia, String codigoPostal, String ciudad, String estado, String telefono, String latitud, String longitud, int estatus, Empleado empleado, Usuario usuario, Persona persona) {
+    public void setEmpleado(Empleado empleado) {
+        this.empleado = empleado;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public Persona getPersona() {
+        return persona;
+    }
+
+    public void setPersona(Persona persona) {
+        this.persona = persona;
+    }
+
+    public Sucursal() {
+    }
+
+    public Sucursal(Empleado empleado, Usuario usuario, Persona persona, int idSucursal, String nombreSucursal, String titular, String rfc, String domicilio, String colonia, String codigoPostal, String ciudad, String estado, String telefono, String latitud, String longitud, int estatus) {
+        this.empleado = empleado;
+        this.usuario = usuario;
+        this.persona = persona;
         this.idSucursal = idSucursal;
-        this.nombre = nombre;
+        this.nombreSucursal = nombreSucursal;
         this.titular = titular;
         this.rfc = rfc;
         this.domicilio = domicilio;
@@ -36,9 +63,6 @@ public class Sucursal {
         this.latitud = latitud;
         this.longitud = longitud;
         this.estatus = estatus;
-        this.empleado = empleado;
-        this.usuario = usuario;
-        this.persona = persona;
     }
 
     public int getIdSucursal() {
@@ -49,12 +73,12 @@ public class Sucursal {
         this.idSucursal = idSucursal;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombreSucursal() {
+        return this.nombreSucursal;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombreSucursal(String nombreSucursal) {
+        this.nombreSucursal = nombreSucursal;
     }
 
     public String getTitular() {
@@ -144,28 +168,8 @@ public class Sucursal {
     public void setEstatus(int estatus) {
         this.estatus = estatus;
     }
-
-    public Empleado getEmpleado() {
-        return empleado;
+    public Sucursal getSucursal() {
+        return this;
     }
 
-    public void setEmpleado(Empleado empleado) {
-        this.empleado = empleado;
-    }
-
-    public Usuario getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
-    }
-
-    public Persona getPersona() {
-        return persona;
-    }
-
-    public void setPersona(Persona persona) {
-        this.persona = persona;
-    }
 }
