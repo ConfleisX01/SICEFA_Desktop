@@ -1,0 +1,90 @@
+/* Definir estilos a elementos */
+Label {
+    -fx-text-fill: black;
+}
+
+/* Definir estilos por IDs */
+#txtTitulo {
+    -fx-text-fill: red;
+}
+
+/* Definir estilos por clase */
+.etiqueta {
+    -fx-text-fill: #252AF0;
+}
+
+.menu {
+    -fx-background-color: transparent;
+}
+
+.menu .label {
+    -fx-text-fill: white;
+
+}
+
+.menu:hover, .menu:showing {
+    -fx-background-color: #4244BD;
+}
+
+.menu:showing {
+    -fx-background-color: #00BD9D;
+}
+
+.menu-item .label {
+    -fx-text-fill: black;
+}
+
+.menu-item:focused .label {
+    -fx-text-fill: white;
+}
+
+.button {
+    -fx-background-color: transparent;
+    -fx-text-fill: black;
+    -fx-font-size: 15px;
+    -fx-font-weight: 400;
+}
+
+.button:hover {
+    -fx-background-color: #709fba;
+}
+
+
+.table-view {
+    -fx-table-cell-border-color: transparent;
+    -fx-table-cell-colum-header-text-fill: white;
+}
+.table-view .column-header{
+    -fx-background-color: #c1c3c6;
+    -fx-text-fill: white;
+}
+
+.table-view .table-cell {
+    -fx-alignment: CENTER;
+    -fx-border-color: transparent;
+}
+.table-column {
+    -fx-alignment: CENTER;
+}
+
+.column-header {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER;
+}
+.table-cell {
+    -fx-border-color: #BDBDBD;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #E0E0E0;
+    -fx-text-fill: black;
+}
+
+.table-row-cell:hover {
+    -fx-background-color: #E0E0E0;
+    -fx-text-fill: black;
+}
+#tblClientes {
+    -fx-background-color: #ecf0f1;
+}

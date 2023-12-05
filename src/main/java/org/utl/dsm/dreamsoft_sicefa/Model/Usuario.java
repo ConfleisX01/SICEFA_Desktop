@@ -6,15 +6,14 @@ public class Usuario {
     private String contrasenia;
     private String rol;
 
-   public Usuario(){
-
-   }
-
     public Usuario(int idUsuario, String nombreUsuario, String contrasenia, String rol) {
         this.idUsuario = idUsuario;
         this.nombreUsuario = nombreUsuario;
         this.contrasenia = contrasenia;
         this.rol = rol;
+    }
+
+    public Usuario() {
     }
 
     public int getIdUsuario() {
@@ -48,4 +47,7 @@ public class Usuario {
     public void setRol(String rol) {
         this.rol = rol;
     }
+
+
+
 }

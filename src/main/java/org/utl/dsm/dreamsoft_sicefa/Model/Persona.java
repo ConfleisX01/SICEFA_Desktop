@@ -15,8 +15,8 @@ public class Persona {
     private String estado;
     private String telefono;
     private String foto;
-    public Persona(){
 
+    public Persona() {
     }
 
     public Persona(int idPersona, String nombre, String apellidoPaterno, String apellidoMaterno, String genero, String fechaNacimiento, String rfc, String curp, String domicilio, String codigoPostal, String ciudad, String estado, String telefono, String foto) {
@@ -147,4 +147,6 @@ public class Persona {
     public void setFoto(String foto) {
         this.foto = foto;
     }
+
+
 }

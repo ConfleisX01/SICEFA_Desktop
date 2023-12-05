@@ -1,5 +1,6 @@
 package org.utl.dsm.dreamsoft_sicefa.Model;
 
+
 public class Empleado {
     private int idEmpleado;
     private String codigo;
@@ -7,22 +8,22 @@ public class Empleado {
     private String puesto;
     private String email;
     private float salarioBruto;
-    private int estatus;
+    private int activo;
     private Persona persona;
     private Usuario usuario;
     private Sucursal sucursal;
 
-    public Empleado(){
-
+    public Empleado() {
     }
-    public Empleado(int idEmpleado, String codigo, String fechaIngreso, String puesto, String email, float salarioBruto, int estatus, Persona persona, Usuario usuario, Sucursal sucursal) {
+
+    public Empleado(int idEmpleado, String codigo, String fechaIngreso, String puesto, String email, float salarioBruto, int activo, Persona persona, Usuario usuario, Sucursal sucursal) {
         this.idEmpleado = idEmpleado;
         this.codigo = codigo;
         this.fechaIngreso = fechaIngreso;
         this.puesto = puesto;
         this.email = email;
         this.salarioBruto = salarioBruto;
-        this.estatus = estatus;
+        this.activo = activo;
         this.persona = persona;
         this.usuario = usuario;
         this.sucursal = sucursal;
@@ -76,12 +77,12 @@ public class Empleado {
         this.salarioBruto = salarioBruto;
     }
 
-    public int getEstatus() {
-        return estatus;
+    public int getActivo() {
+        return activo;
     }
 
-    public void setEstatus(int estatus) {
-        this.estatus = estatus;
+    public void setActivo(int activo) {
+        this.activo = activo;
     }
 
     public Persona getPersona() {
@@ -107,4 +108,10 @@ public class Empleado {
     public void setSucursal(Sucursal sucursal) {
         this.sucursal = sucursal;
     }
+
+
+
+
+
+
 }

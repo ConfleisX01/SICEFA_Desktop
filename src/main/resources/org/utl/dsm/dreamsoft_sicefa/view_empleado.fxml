@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:controller="org.utl.dsm.dreamsoft_sicefa.Controller.ControllerEmpleado" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0"
+            prefWidth="1000.0" style="-fx-background-color: #f6f6f6;" stylesheets="@css/style.css"
+            xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+    <left>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;"
+                    BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fitHeight="70.0" fitWidth="74.0" layoutX="66.0" layoutY="14.0" pickOnBounds="true"
+                           preserveRatio="true">
+                    <image>
+                        <Image url="@img/logoMTV.png"/>
+                    </image>
+                </ImageView>
+                <VBox layoutY="105.0" prefHeight="570.0" prefWidth="202.0">
+                    <children>
+                        <Button fx:id="btnPedidos" mnemonicParsing="false" prefHeight="115.0" prefWidth="202.0"
+                                text="Pedidos Compra"/>
+                        <Button fx:id="btnVentas" mnemonicParsing="false" prefHeight="114.0" prefWidth="202.0"
+                                text="Ventas"/>
+                        <Button fx:id="btnEmpleados" mnemonicParsing="false" prefHeight="114.0" prefWidth="202.0"
+                                text="Empleados"/>
+                        <Button fx:id="btnConsultas" mnemonicParsing="false" prefHeight="114.0" prefWidth="202.0"
+                                text="Consulta y búsqueda de productos">
+                            <font>
+                                <Font size="6.0"/>
+                            </font>
+                        </Button>
+                        <Button fx:id="btnClientes" mnemonicParsing="false" prefHeight="111.0" prefWidth="202.0"
+                                text="Clientes"/>
+                    </children>
+                </VBox>
+            </children>
+        </AnchorPane>
+    </left>
+    <top>
+        <MenuBar style="-fx-background-color: black;" BorderPane.alignment="CENTER">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Close"/>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Delete"/>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="About"/>
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+    <center>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #DADEDA;"
+                    BorderPane.alignment="CENTER">
+            <children>
+                <AnchorPane layoutX="-1.0" prefHeight="53.0" prefWidth="800.0" AnchorPane.bottomAnchor="620.0"
+                            AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <Label layoutX="243.0" layoutY="3.0" prefHeight="49.0" prefWidth="332.0"
+                               text="Gestión de Empleados" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="243.0"
+                               AnchorPane.rightAnchor="224.0" AnchorPane.topAnchor="3.0">
+                            <font>
+                                <Font size="33.0"/>
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+                <GridPane layoutX="12.0" layoutY="68.0" prefHeight="318.0" prefWidth="775.0"
+                          AnchorPane.bottomAnchor="289.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="11.0"
+                          AnchorPane.topAnchor="68.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                    </rowConstraints>
+                    <children>
+                        <Label prefHeight="12.0" prefWidth="140.0" text="Nombre:" textFill="#030303"
+                               GridPane.columnIndex="1">
+                            <font>
+                                <Font name="Lucida Bright Demibold" size="15.0"/>
+                            </font>
+                        </Label>
+                        <Label prefHeight="19.0" prefWidth="338.0" text="Apellido Paterno" textFill="#030303"
+                               GridPane.columnIndex="2">
+                            <font>
+                                <Font name="Lucida Bright Demibold" size="15.0"/>
+                            </font>
+                        </Label>
+                        <Label text="Apellido Materno" textFill="#030303" GridPane.columnIndex="3">
+                            <font>
+                                <Font name="Lucida Bright Demibold" size="15.0"/>
+                            </font>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="117.0" text="Género" textFill="#030303"
+                               GridPane.rowIndex="2">
+                            <font>
+                                <Font name="Lucida Bright Demibold" size="15.0"/>
+                            </font>
+                        </Label>
+                        <Label prefHeight="19.0" prefWidth="342.0" text="Fecha Nacimiento" textFill="#030303"
+                               GridPane.columnIndex="1" GridPane.rowIndex="2">
+                            <font>
+                                <Font name="Lucida Bright Demibold" size="15.0"/>
+                            </font>
+                        </Label>
+                        <Label text="RFC" textFill="#030303" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                            <font>
+                                <Font name="Lucida Bright Demibold" size="15.0"/>
+                            </font>
+                        </Label>
+                        <Label text="CURP" textFill="#030303" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                            <font>
+                                <Font name="Lucida Bright Demibold" size="15.0"/>
+                            </font>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="115.0" text="Domicilio" textFill="#030303"
+                               GridPane.rowIndex="4">
+                            <font>
+                                <Font name="Lucida Bright Demibold" size="15.0"/>
+                            </font>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="120.0" text="Código Postal" textFill="#030303"
+                               GridPane.columnIndex="1" GridPane.rowIndex="4">
+                            <font>
+                                <Font name="Lucida Bright Demibold" size="15.0"/>
+                            </font>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="118.0" text="Ciudad" textFill="#030303"
+                               GridPane.columnIndex="2" GridPane.rowIndex="4">
+                            <font>
+                                <Font name="Lucida Bright Demibold" size="15.0"/>
+                            </font>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="116.0" text="Estado" textFill="#030303"
+                               GridPane.columnIndex="3" GridPane.rowIndex="4">
+                            <font>
+                                <Font name="Lucida Bright Demibold" size="15.0"/>
+                            </font>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="116.0" text="Télefono" textFill="#030303"
+                               GridPane.rowIndex="6">
+                            <font>
+                                <Font name="Lucida Bright Demibold" size="15.0"/>
+                            </font>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="116.0" text="Foto" textFill="#030303"
+                               GridPane.columnIndex="1" GridPane.rowIndex="6">
+                            <font>
+                                <Font name="Lucida Bright Demibold" size="15.0"/>
+                            </font>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="117.0" text="Salario Bruto" textFill="#030303"
+                               GridPane.columnIndex="2" GridPane.rowIndex="6">
+                            <font>
+                                <Font name="Lucida Bright Demibold" size="15.0"/>
+                            </font>
+                        </Label>
+                        <TextField fx:id="txtId" promptText="ID" GridPane.rowIndex="1"/>
+                        <TextField fx:id="txtNombre" promptText="Ingresa tu Nombre" GridPane.columnIndex="1"
+                                   GridPane.rowIndex="1"/>
+                        <TextField fx:id="txtApellidoPaterno" promptText="Ingresa tu Apellido Paterno"
+                                   GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+                        <TextField fx:id="txtApellidoMaterno" promptText="Ingresa tu Apellido Materno"
+                                   GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+                        <ComboBox fx:id="comGenero" prefHeight="25.0" prefWidth="422.0" GridPane.rowIndex="3"/>
+                        <DatePicker fx:id="dataFecha" prefHeight="25.0" prefWidth="394.0" GridPane.columnIndex="1"
+                                    GridPane.rowIndex="3"/>
+                        <TextField fx:id="txtRFC" promptText="Ingresa tu RFC" GridPane.columnIndex="2"
+                                   GridPane.rowIndex="3"/>
+                        <TextField fx:id="txtCURP" promptText="Ingresa tu CURP" GridPane.columnIndex="3"
+                                   GridPane.rowIndex="3"/>
+                        <TextField fx:id="txtDomicilio" promptText="Ingresa tu Domicilio" GridPane.rowIndex="5"/>
+                        <TextField fx:id="txtCodigoPostal" promptText="Ingresa tu Código Postal"
+                                   GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+                        <TextField fx:id="txtCiudad" promptText="Ingresa tu Ciudad" GridPane.columnIndex="2"
+                                   GridPane.rowIndex="5"/>
+                        <ComboBox fx:id="comEstado" prefHeight="25.0" prefWidth="392.0" GridPane.columnIndex="3"
+                                  GridPane.rowIndex="5"/>
+                        <TextField fx:id="txtTelefono" promptText="Ingresa tu Télefono" GridPane.rowIndex="7"/>
+                        <TextField fx:id="txtFoto" promptText="Foto" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+                        <TextField fx:id="txtSalarioBruto" promptText="Ingresa tu Email" GridPane.columnIndex="2"
+                                   GridPane.rowIndex="7"/>
+                        <Label prefHeight="12.0" prefWidth="140.0" text="ID:" textFill="#030303">
+                            <font>
+                                <Font name="Lucida Bright Demibold" size="15.0"/>
+                            </font>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="117.0" text="Estatus" textFill="#030303"
+                               GridPane.columnIndex="3" GridPane.rowIndex="6">
+                            <font>
+                                <Font name="Lucida Bright Demibold" size="15.0"/>
+                            </font>
+                        </Label>
+                        <TextField fx:id="txtEstatus" promptText="Estatus" GridPane.columnIndex="3"
+                                   GridPane.rowIndex="7"/>
+                        <Label alignment="BOTTOM_RIGHT" contentDisplay="RIGHT" prefHeight="19.0" prefWidth="197.0"
+                               text="Buscar Cliente:" textAlignment="RIGHT" textFill="#030303" GridPane.columnIndex="1"
+                               GridPane.rowIndex="10">
+                            <font>
+                                <Font name="Lucida Bright Demibold" size="15.0"/>
+                            </font>
+                        </Label>
+                        <TextField fx:id="txtBuscar" promptText="Ingresa el nombre a buscar, Ej: Alejandra"
+                                   GridPane.columnIndex="2" GridPane.rowIndex="10"/>
+                        <Label prefHeight="17.0" prefWidth="116.0" text="ID Sucursal" textFill="#030303"
+                               GridPane.rowIndex="8">
+                            <font>
+                                <Font name="Lucida Bright Demibold" size="15.0"/>
+                            </font>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="116.0" text="Puesto" textFill="#030303"
+                               GridPane.columnIndex="1" GridPane.rowIndex="8">
+                            <font>
+                                <Font name="Lucida Bright Demibold" size="15.0"/>
+                            </font>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="116.0" text="Rol" textFill="#030303"
+                               GridPane.columnIndex="2" GridPane.rowIndex="8">
+                            <font>
+                                <Font name="Lucida Bright Demibold" size="15.0"/>
+                            </font>
+                        </Label>
+                        <TextField fx:id="txtPuesto" promptText="Ingresa el puesto" GridPane.columnIndex="1"
+                                   GridPane.rowIndex="9"/>
+                        <TextField fx:id="txtRol" promptText="Ingresa el rol" GridPane.columnIndex="2"
+                                   GridPane.rowIndex="9"/>
+                        <TextField fx:id="txtIDSucursal" promptText="Ingresa tu Nombre" GridPane.rowIndex="9"/>
+                    </children>
+                </GridPane>
+                <Button fx:id="btnAgregar" layoutX="236.0" layoutY="419.0" mnemonicParsing="false"
+                        style="-fx-background-color: #009578;" text="Agregar">
+                    <font>
+                        <Font name="System Bold" size="39.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="btnModificar" layoutX="316.0" layoutY="419.0" mnemonicParsing="false"
+                        style="-fx-background-color: #357edd;" text="Modificar" AnchorPane.leftAnchor="316.0">
+                    <font>
+                        <Font name="System Bold" size="12.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="btnEliminar" layoutX="409.0" layoutY="419.0" mnemonicParsing="false"
+                        style="-fx-background-color: #c0392b;" text="Eliminar">
+                    <font>
+                        <Font name="System Bold" size="12.0"/>
+                    </font>
+                </Button>
+                <TableView fx:id="tblEmpleados" layoutX="17.0" layoutY="463.0" prefHeight="191.0" prefWidth="770.0"
+                           AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="17.0" AnchorPane.rightAnchor="11.0"
+                           AnchorPane.topAnchor="463.0">
+                    <columns>
+                        <TableColumn fx:id="tcolID" prefWidth="50.0" text="ID"/>
+                        <TableColumn fx:id="tcolNombre" minWidth="0.0" prefWidth="127.0" text="Nombre"/>
+                        <TableColumn fx:id="tcolApellidoPaterno" prefWidth="152.0" text="Apellido Paterno"/>
+                        <TableColumn fx:id="tcolRfc" prefWidth="108.0" text="RFC"/>
+                        <TableColumn fx:id="tcolTelefono" prefWidth="116.0" text="Teléfono"/>
+                        <TableColumn fx:id="tcolFechaRegistro" prefWidth="126.0" text="Fecha Registro"/>
+                        <TableColumn fx:id="tcolEstatus" prefWidth="90.0" text="Estatus"/>
+                    </columns>
+                </TableView>
+                <Button fx:id="btnBuscar" layoutX="493.0" layoutY="419.0" mnemonicParsing="false"
+                        style="-fx-background-color: #af69cd;" text="Buscar">
+                    <font>
+                        <Font name="System Bold" size="12.0"/>
+                    </font>
+                </Button>
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>
