@@ -9,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import org.utl.dsm.dreamsoft_sicefa.Model.Usuario;
 
 import java.io.IOException;
 import java.net.URL;
@@ -53,15 +54,9 @@ public class ControllerLogin implements Initializable {
         String password = txtContrasenia.getText();
 
         if(validateUser()) {
-            HttpResponse<JsonNode> apiResponse = Unirest.get("http://localhost:8080/DSM406_EjemploPost/api/ejemplo/login").queryString("user", user).queryString("password", password).asJson();
-            String result = apiResponse.getBody().getObject().getString("response");
-            if(result.equals("null")) {
-                System.out.println("Credenciales Incorrectas");
-            } else {
-                System.out.println("Credenciales correctas");
-            }
+            HttpResponse<JsonNode> apiResponse = Unirest.get("http://localhost:8080/DreamSoft_SICEFA/api/login/login").queryString("user", user).queryString("password", password).asJson();
+            String result = apiResponse.getBody().getObject().getString("rol");
         } else {
-            System.out.println("Campos vacios");
         }
     }
 
