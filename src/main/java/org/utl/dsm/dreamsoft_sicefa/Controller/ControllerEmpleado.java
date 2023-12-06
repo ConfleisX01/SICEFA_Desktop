@@ -32,6 +32,9 @@ public class ControllerEmpleado implements Initializable {
     private Button btnBuscar;
 
     @FXML
+    private Button btnLimpiar;
+
+    @FXML
     private Button btnClientes;
 
     @FXML
@@ -188,6 +191,7 @@ public class ControllerEmpleado implements Initializable {
             try {
                 save();
                 mostrarDatos();
+                limpiarDatos();
                 //mostrarDatos();
             } catch (Exception e) {
                 e.printStackTrace();
@@ -197,7 +201,7 @@ public class ControllerEmpleado implements Initializable {
             try {
                 modify();
                 mostrarDatos();
-                //mostrarDatos();
+                limpiarDatos();
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -206,6 +210,14 @@ public class ControllerEmpleado implements Initializable {
             try {
                 eliminate();
                 mostrarDatos();
+                limpiarDatos();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+        btnLimpiar.setOnAction(event -> {
+            try {
+                limpiarDatos();
                 //mostrarDatos();
             } catch (Exception e) {
                 e.printStackTrace();
@@ -224,7 +236,7 @@ public class ControllerEmpleado implements Initializable {
         tblEmpleados.setOnMouseClicked(event -> {
             Empleado selectEmpleado = tblEmpleados.getSelectionModel().getSelectedItem();
             // comprobamos que no se seleccone nada nuli¿o
-            if (selectEmpleado != null){
+            if (selectEmpleado != null) {
                 selectInputs(selectEmpleado);
             }
         });
@@ -325,6 +337,7 @@ public class ControllerEmpleado implements Initializable {
             ex.printStackTrace();
         }
     }
+
     public void eliminate() throws UnirestException, IOException {
         // se insertan los datos de Persona
         Empleado e = new Empleado();
@@ -364,7 +377,7 @@ public class ControllerEmpleado implements Initializable {
         }
     }*/
 
-    public void inicializarTabla(){
+    public void inicializarTabla() {
         tcolID.setCellValueFactory(param -> new SimpleObjectProperty<>(param.getValue().getIdEmpleado()));
         tcolNombre.setCellValueFactory(param -> new SimpleObjectProperty<>(param.getValue().getPersona().getNombre()).asString());
         tcolApellidoPaterno.setCellValueFactory(param -> new SimpleObjectProperty<>(param.getValue().getPersona().getApellidoPaterno()).asString());
@@ -438,6 +451,28 @@ public class ControllerEmpleado implements Initializable {
         if (fechaString != null && !fechaString.isEmpty()) {
             dataFecha.setValue(LocalDate.parse(fechaString));
         }
+    }
 
+
+    public void limpiarDatos() {
+        txtNombre.setText("");
+        txtApellidoPaterno.setText("");
+        txtApellidoMaterno.setText("");
+        comGenero.setValue(null); // Si el ComboBox es nullable
+        txtRFC.setText("");
+        txtCURP.setText("");
+        txtDomicilio.setText("");
+        txtCodigoPostal.setText("");
+        txtCiudad.setText("");
+        comEstado.setValue(null); // Si el ComboBox es nullable
+        txtTelefono.setText("");
+        txtFoto.setText("");
+        txtIDSucursal.setText("");
+        txtRol.setText("");
+        txtId.setText("");
+        txtPuesto.setText("");
+        txtSalarioBruto.setText("");
+        txtEstatus.setText("");
+        dataFecha.setValue(null); // Si el DatePicker es nullable
     }
 }
