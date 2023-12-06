@@ -18,7 +18,6 @@ public class Main extends Application {
         primaryStage.setScene(scene);
         primaryStage.setTitle("Bienvenido a SICEFA!");
         primaryStage.setResizable(false);
-        primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.show();
     }
 

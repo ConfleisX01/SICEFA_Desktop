@@ -11,5 +11,4 @@ module org.utl.dsm.dreamsoft_sicefa {
     exports org.utl.dsm.dreamsoft_sicefa.Controller;
 
     opens org.utl.dsm.dreamsoft_sicefa.Model to com.google.gson;
-
 }
