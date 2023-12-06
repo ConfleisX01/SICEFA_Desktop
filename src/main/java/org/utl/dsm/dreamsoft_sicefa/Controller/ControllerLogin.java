@@ -1,5 +1,6 @@
 package org.utl.dsm.dreamsoft_sicefa.Controller;
 
+import javax.swing.JOptionPane;
 
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.JsonNode;
@@ -37,7 +38,7 @@ public class ControllerLogin implements Initializable {
     public void loadButtons() {
         btnCentral.setOnAction(event -> {
             try {
-                getUser();
+                loginCentral();
             } catch (UnirestException e) {
                 throw new RuntimeException(e);
             } catch (IOException e) {
@@ -46,22 +47,54 @@ public class ControllerLogin implements Initializable {
         });
 
         btnSucursal.setOnAction(event -> {
-
+            try {
+                loginSucursal();
+            } catch (UnirestException e) {
+                throw new RuntimeException(e);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         });
     }
-    public void getUser() throws UnirestException, IOException {
+
+    public void loginCentral() throws UnirestException, IOException {
         String user = txtUsuario.getText();
         String password = txtContrasenia.getText();
 
-        if(validateUser()) {
-            HttpResponse<JsonNode> apiResponse = Unirest.get("http://localhost:8080/DreamSoft_SICEFA/api/login/login").queryString("user", user).queryString("password", password).asJson();
+        if (validateUser()) {
+            HttpResponse<JsonNode> apiResponse = Unirest.get("http://localhost:8080/DreamSoft_SICEFA/api/login/login")
+                    .queryString("user", user).queryString("password", password).asJson();
             String result = apiResponse.getBody().getObject().getString("rol");
+            if (result.equals("ADMC")) {
+                /// Abrir el modulo correspondiente
+            } else {
+                JOptionPane.showMessageDialog(null, "Las credenciales son inválidas", "Error", JOptionPane.ERROR_MESSAGE);
+            }
         } else {
+            JOptionPane.showMessageDialog(null, "Datos vacios", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    public void loginSucursal() throws UnirestException, IOException {
+        String user = txtUsuario.getText();
+        String password = txtContrasenia.getText();
+
+        if (validateUser()) {
+            HttpResponse<JsonNode> apiResponse = Unirest.get("http://localhost:8080/DreamSoft_SICEFA/api/login/login")
+                    .queryString("user", user).queryString("password", password).asJson();
+            String result = apiResponse.getBody().getObject().getString("rol");
+            if (result.equals("ADMS") || result.equals("ADMC")) {
+                /// Abrir el modulo correspondiente
+            } else {
+                JOptionPane.showMessageDialog(null, "Las credenciales son inválidas", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Datos vacios", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 
     public boolean validateUser() {
-        if(txtUsuario.getText().isEmpty()) {
+        if (txtUsuario.getText().isEmpty()) {
             return false;
         }
 

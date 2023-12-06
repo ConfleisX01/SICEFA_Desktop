@@ -3,6 +3,7 @@ module org.utl.dsm.dreamsoft_sicefa {
     requires javafx.fxml;
     requires com.google.gson;
     requires unirest.java;
+    requires java.desktop;
 
     opens org.utl.dsm.dreamsoft_sicefa to javafx.fxml;
     exports org.utl.dsm.dreamsoft_sicefa;
