@@ -28,19 +28,13 @@
                         <Image url="@img/logoMTV.png" />
                     </image>
                 </ImageView>
-                <VBox layoutY="105.0" prefHeight="570.0" prefWidth="202.0">
-                    <children>
-                        <Button fx:id="btnPedidos" mnemonicParsing="false" prefHeight="115.0" prefWidth="202.0" text="Pedidos Compra" />
-                        <Button fx:id="btnVentas" mnemonicParsing="false" prefHeight="114.0" prefWidth="202.0" text="Ventas" />
-                        <Button fx:id="btnEmpleados" mnemonicParsing="false" prefHeight="114.0" prefWidth="202.0" text="Empleados" />
-                        <Button fx:id="btnConsultas" mnemonicParsing="false" prefHeight="114.0" prefWidth="202.0" text="Consulta y búsqueda de productos">
-                            <font>
-                                <Font size="6.0" />
-                            </font>
-                        </Button>
-                        <Button fx:id="btnClientes" mnemonicParsing="false" prefHeight="111.0" prefWidth="202.0" text="Clientes" />
-                    </children>
-                </VBox>
+            <VBox layoutX="10.0" layoutY="115.0" prefHeight="570.0" prefWidth="202.0">
+               <children>
+                  <Button fx:id="btnPedidos" mnemonicParsing="false" prefHeight="178.0" prefWidth="202.0" text="Control de Pedidos" />
+                  <Button fx:id="btnProductos" mnemonicParsing="false" prefHeight="201.0" prefWidth="202.0" text="Productos" />
+                  <Button fx:id="btnSucursales" mnemonicParsing="false" prefHeight="186.0" prefWidth="202.0" text="Sucursales" />
+               </children>
+            </VBox>
             </children>
         </AnchorPane>
     </left>
@@ -188,6 +182,11 @@
                                 <Font name="System Bold" size="12.0" />
                             </font>
                         </Button>
+                  <Button fx:id="btnRegresar" mnemonicParsing="false" style="-fx-background-color: #5564eb;" text="Regresar Login" GridPane.rowIndex="11">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
                     </children>
                 </GridPane>
                 <Button fx:id="btnAgregar" layoutX="236.0" layoutY="419.0" mnemonicParsing="false" style="-fx-background-color: #009578;" text="Agregar">

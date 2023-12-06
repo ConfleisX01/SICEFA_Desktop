@@ -9,8 +9,12 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
 import org.utl.dsm.dreamsoft_sicefa.Model.Empleado;
 import org.utl.dsm.dreamsoft_sicefa.Model.Persona;
 import org.utl.dsm.dreamsoft_sicefa.Model.Usuario;
@@ -139,6 +143,9 @@ public class ControllerEmpleado implements Initializable {
     @FXML
     private TextField txtTelefono;
 
+    @FXML
+    private Button btnRegresar;
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -223,6 +230,14 @@ public class ControllerEmpleado implements Initializable {
                 e.printStackTrace();
             }
         });
+
+       btnRegresar.setOnAction(event -> {
+            regresarLogin();
+        });
+
+       btnClientes.setOnAction(event -> {
+           mostrarClientes();
+       });
 
       /*  btnBuscar.setOnAction(event -> {
             try {
@@ -474,5 +489,33 @@ public class ControllerEmpleado implements Initializable {
         txtSalarioBruto.setText("");
         txtEstatus.setText("");
         dataFecha.setValue(null); // Si el DatePicker es nullable
+    }
+
+    public  void mostrarClientes(){
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/utl/dsm/dreamsoft_sicefa/view_clientes.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) btnRegresar.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+
+    }
+
+   public void regresarLogin(){
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/utl/dsm/dreamsoft_sicefa/view_login.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) btnRegresar.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+
     }
 }

@@ -7,9 +7,13 @@ import com.mashape.unirest.http.JsonNode;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import org.utl.dsm.dreamsoft_sicefa.Model.Usuario;
 
 import java.io.IOException;
@@ -66,7 +70,12 @@ public class ControllerLogin implements Initializable {
                     .queryString("user", user).queryString("password", password).asJson();
             String result = apiResponse.getBody().getObject().getString("rol");
             if (result.equals("ADMC")) {
-                /// Abrir el modulo correspondiente
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/utl/dsm/dreamsoft_sicefa/view_sucursal.fxml"));
+                Parent root = loader.load();
+                Scene scene = new Scene(root);
+                Stage stage = (Stage) btnCentral.getScene().getWindow();
+                stage.setScene(scene);
+                stage.show();
             } else {
                 JOptionPane.showMessageDialog(null, "Las credenciales son inválidas", "Error", JOptionPane.ERROR_MESSAGE);
             }
@@ -84,7 +93,12 @@ public class ControllerLogin implements Initializable {
                     .queryString("user", user).queryString("password", password).asJson();
             String result = apiResponse.getBody().getObject().getString("rol");
             if (result.equals("ADMS") || result.equals("ADMC")) {
-                /// Abrir el modulo correspondiente
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/utl/dsm/dreamsoft_sicefa/view_empleado.fxml"));
+                Parent root = loader.load();
+                Scene scene = new Scene(root);
+                Stage stage = (Stage) btnCentral.getScene().getWindow();
+                stage.setScene(scene);
+                stage.show();
             } else {
                 JOptionPane.showMessageDialog(null, "Las credenciales son inválidas", "Error", JOptionPane.ERROR_MESSAGE);
             }

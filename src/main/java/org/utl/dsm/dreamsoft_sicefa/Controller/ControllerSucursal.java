@@ -9,8 +9,12 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
 import org.utl.dsm.dreamsoft_sicefa.Model.Sucursal;
 
 
@@ -31,17 +35,10 @@ public class ControllerSucursal implements Initializable {
     @FXML
     private Button btnLimpiar;
 
-    @FXML
-    private Button btnClientes;
-
-    @FXML
-    private Button btnConsultas;
 
     @FXML
     private Button btnEliminar;
 
-    @FXML
-    private Button btnEmpleados;
 
     @FXML
     private Button btnModificar;
@@ -50,7 +47,11 @@ public class ControllerSucursal implements Initializable {
     private Button btnPedidos;
 
     @FXML
-    private Button btnVentas;
+    private Button btnProductos;
+
+    @FXML
+    private Button btnSucursales;
+
 
     @FXML
     private ComboBox<String> comEstado;
@@ -115,6 +116,9 @@ public class ControllerSucursal implements Initializable {
     @FXML
     private TextField txtTitular;
 
+    @FXML
+    private Button btnRegresar;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -163,6 +167,14 @@ public class ControllerSucursal implements Initializable {
             }  catch (Exception e) {
                 e.printStackTrace();
             }
+        });
+
+        btnProductos.setOnAction(event -> {
+            mostrarProductos();
+        });
+
+        btnRegresar.setOnAction(event -> {
+            regresarLogin();
         });
 
       /*  btnBuscar.setOnAction(event -> {
@@ -351,5 +363,31 @@ public class ControllerSucursal implements Initializable {
         txtLongitud.setText("");
         txtId.setText("");
         txtEstatus.setText("");
+    }
+
+    public void mostrarProductos(){
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/utl/dsm/dreamsoft_sicefa/view_productos.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) btnProductos.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+    }
+    public void regresarLogin(){
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/utl/dsm/dreamsoft_sicefa/view_login.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) btnRegresar.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+
     }
 }
