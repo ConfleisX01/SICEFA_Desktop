@@ -252,6 +252,11 @@
                         <Font name="System Bold" size="12.0" />
                     </font>
                 </Button>
+                <Button fx:id="btnLimpiar" layoutX="599.0" layoutY="419.0" mnemonicParsing="false" style="-fx-background-color: #cdbe01;" text="Limpiar Datos">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Button>
             </children>
         </AnchorPane>
     </center>
