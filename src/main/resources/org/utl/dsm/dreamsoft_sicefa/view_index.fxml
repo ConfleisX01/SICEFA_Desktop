@@ -56,7 +56,7 @@
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <Button mnemonicParsing="false" styleClass="button-start" stylesheets="@css/myStyle.css" text="Comenzar">
+                  <Button fx:id="btnComenzar" mnemonicParsing="false" styleClass="button-start" stylesheets="@css/myStyle.css" text="Comenzar">
                      <VBox.margin>
                         <Insets bottom="5.0" top="5.0" />
                      </VBox.margin>

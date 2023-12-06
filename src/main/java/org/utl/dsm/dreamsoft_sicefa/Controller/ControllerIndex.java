@@ -12,6 +12,10 @@ public class ControllerIndex implements Initializable {
     @FXML
     private Button btnExit;
 
+    @FXML
+    private Button btnComenzar;
+
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         loadButtons();
@@ -20,6 +24,10 @@ public class ControllerIndex implements Initializable {
     public void loadButtons() {
         btnExit.setOnAction(event -> {
             System.exit(0);
+        });
+
+        btnComenzar.setOnAction(event -> {
+
         });
     }
 }

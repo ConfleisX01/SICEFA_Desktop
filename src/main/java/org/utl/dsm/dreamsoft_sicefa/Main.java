@@ -13,7 +13,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        root = FXMLLoader.load(this.getClass().getResource("view_empleado.fxml"));
+        root = FXMLLoader.load(this.getClass().getResource("view_index.fxml"));
         Scene scene = new Scene(root, 1000, 700);
         primaryStage.setScene(scene);
         primaryStage.setTitle("Bienvenido a SICEFA!");
